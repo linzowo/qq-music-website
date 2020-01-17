@@ -9,8 +9,11 @@
 <script>
     let gotop = new GoTop("#gotop-container","./gotop.css",{
         href:{
-            "top":"#",
-            "反馈":"反馈"
+            "#":"Top",
+            "反馈":null
         }
     });
+    console.log(gotop);
+    gotop.LinkEleList[1].style.background = "#ccc";
+    
 </script>

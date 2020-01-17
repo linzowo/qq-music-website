@@ -1,8 +1,8 @@
 /* 公共设置 */
 html,
 body,
-#gotop-container,
-#gotop-container div {
+.gotop-container,
+.gotop-container div {
   margin: 0;
   padding: 0;
 }
@@ -12,14 +12,14 @@ a {
   text-decoration: none;
 }
 
-#gotop-container {
+.gotop-container {
   position: fixed;
   bottom: 40px;
   right: 40px;
   background-color: #fff;
 }
 
-#gotop-container a {
+.gotop-container a {
   width: 38px;
   height: 38px;
   line-height: 38px;
@@ -30,7 +30,7 @@ a {
   text-align: center;
 }
 
-#gotop-container a:hover {
+.gotop-container a:hover {
   background-color: #ededed;
   color: #31c27c;
 }
