@@ -1,0 +1,62 @@
+/* 网页固定标签组件样式 */
+.fixed-flag,
+.fixed-flag-logo,
+.fixed-flag-text,
+.fixed-flag-btn {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.fixed-flag {
+  position: fixed;
+  top: 160px;
+  right: 40px;
+
+  padding: 18px;
+  background-color: #fff;
+
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.07);
+}
+
+.fixed-flag-logo {
+  display: block;
+  width: 102px;
+  margin: 0 auto 9px;
+}
+
+.fixed-flag-text {
+  text-align: center;
+  color: #a6a6a6;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.fixed-flag-btn {
+  display: block;
+  width: 130px;
+  height: 26px;
+  margin: 0 auto;
+  border-radius: 26px;
+  line-height: 26px;
+  text-align: center;
+  color: #fff;
+  background-color: #31c27c;
+}
+
+.fixed-flag-btn-icon {
+  display: inline-block;
+  width: 13px;
+  height: 14px;
+  /* background-image: url("../../images/icon_sprite.png"); */
+  background-image: url(https://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png?max_age=2592000&v=85678e8f28c7b4bcad5c209b21b7e3b3&v=85678e8f28c7b4bcad5c209b21b7e3b3);
+  background-image: -webkit-image-set(
+    url(img/icon_sprite.png?max_age=2592000&v=85678e8…&v=85678e8…) 1x,
+    url(https://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png?max_age=2592000&v=85678e8f28c7b4bcad5c209b21b7e3b3&v=85678e8f28c7b4bcad5c209b21b7e3b3&v=ce93ff148404a1f9918b8bc107e7dd6b)
+      2x
+  );
+  background-position: -160px -320px;
+}

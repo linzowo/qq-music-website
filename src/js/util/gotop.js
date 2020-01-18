@@ -30,8 +30,6 @@ export default class GoTop {
 
     // 其他参数
     this.hrefObj = obj.href;
-    console.log(obj);
-    
 
     // 存储a标签元素的数组
     this.LinkEleList = null;
@@ -61,7 +59,6 @@ export default class GoTop {
 
   setHtml() {
     let res = "";
-    console.log(this.hrefObj);
     
     for (const key in this.hrefObj) {
       res += getLink(this.hrefObj[key], key);

@@ -17,6 +17,7 @@ a {
   bottom: 40px;
   right: 40px;
   background-color: #fff;
+  z-index: 999;
 }
 
 .gotop-container a {
