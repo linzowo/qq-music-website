@@ -1,0 +1,24 @@
+/* index文件样式 */
+
+/* 侧边栏回到顶部标签 */
+#side-btn {
+  font-size: 14px;
+}
+.side-gotop::before {
+  margin: 14px 10px;
+  display: block;
+  content: "";
+  width: 18px;
+  height: 10px;
+  background-image: url("../images/icon_sprite.png");
+  background-position: -160px 0;
+}
+.side-player::before {
+  margin: 11px 9px;
+  display: block;
+  content: "";
+  width: 20px;
+  height: 18px;
+  background-image: url("../images/icon_sprite.png");
+  background-position: -180px 0;
+}

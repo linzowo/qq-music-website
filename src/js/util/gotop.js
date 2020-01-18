@@ -19,7 +19,7 @@ function getLink(content, href) {
  *    href:{"linkURL":textContent}
  * }
  */
-class GoTop {
+export default class GoTop {
   constructor(root, cssPath, obj) {
     // 根节点
     this.root = root.nodeType === 1 ? root : document.querySelector(root);
@@ -30,6 +30,8 @@ class GoTop {
 
     // 其他参数
     this.hrefObj = obj.href;
+    console.log(obj);
+    
 
     // 存储a标签元素的数组
     this.LinkEleList = null;
@@ -57,12 +59,10 @@ class GoTop {
     document.head.appendChild(cssLink);
   }
 
-  /**
-   * 向根节点中插入a标签
-   */
   setHtml() {
     let res = "";
-
+    console.log(this.hrefObj);
+    
     for (const key in this.hrefObj) {
       res += getLink(this.hrefObj[key], key);
     }
