@@ -26,7 +26,7 @@ export default class GoTop {
     // 为根节点添加样式名称
     this.root.classList.add("gotop-container");
     // css文件路径
-    this.cssPath = cssPath;
+    this.cssPath = cssPath ? cssPath : null;
 
     // 其他参数
     this.hrefObj = obj.href;
@@ -40,8 +40,9 @@ export default class GoTop {
 
   init() {
     // 添加css引用链接
-    this.setCssLink();
-
+    if (this.cssPath) {
+      this.setCssLink();
+    }
     this.setHtml();
 
     //
@@ -59,7 +60,7 @@ export default class GoTop {
 
   setHtml() {
     let res = "";
-    
+
     for (const key in this.hrefObj) {
       res += getLink(this.hrefObj[key], key);
     }

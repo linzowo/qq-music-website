@@ -1,5 +1,268 @@
 /* index文件样式 */
 
+/* 公共样式 start */
+html,
+body,
+div,
+ul,
+li,
+button,
+i,
+p,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+th {
+  color: #000;
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: poppin, Tahoma, Arial, \5fae\8f6f\96c5\9ed1, sans-serif;
+  font-family: Tahoma, Arial, \5fae\8f6f\96c5\9ed1, sans-serif/9;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+i {
+  font-style: normal;
+  font-weight: normal;
+}
+li {
+  list-style: none;
+}
+input {
+  outline-style: none;
+}
+
+/* 精灵图背景 */
+.sprite {
+  background-image: url("../images/icon_sprite.png");
+  background-image: -webkit-image-set(
+    url("../images/icon_sprite.png") 1x,
+    url("../images/icon_sprite@2x.png") 2x
+  );
+}
+
+/* 版心 */
+.w {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 当屏幕尺寸小于1240时将版心防止版心大小超过范围，同时调整margin */
+@media (max-width: 1240px) {
+  .w {
+    min-width: 900px;
+    margin: 0 50px;
+  }
+}
+
+/* 公共样式 end */
+
+/* 公共导航栏 start */
+.mod_header {
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+/* logo */
+.mod_header .logo {
+  position: absolute;
+  top: 22px;
+}
+
+.mod_header .logo img {
+  width: 170px;
+  height: 46px;
+}
+
+/* mod-top-nav */
+.mod-top-nav {
+  position: absolute;
+  left: 188px;
+}
+.mod-top-nav ul {
+  display: flex;
+}
+.mod-top-nav ul li {
+  font-size: 18px;
+}
+.mod-top-nav li a {
+  display: block;
+  text-align: center;
+  height: 90px;
+  line-height: 90px;
+  padding: 0 20px;
+}
+.mod-top-nav li a.current {
+  background-color: #31c27c;
+  color: #fff;
+}
+
+/* top-search */
+.mod-top-search {
+  position: absolute;
+  right: 284px;
+}
+.mod-top-search .search-input {
+  border: 1px solid #c9c9c9;
+  border-radius: 3px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 0 0 11px;
+  margin-top: 26px;
+  overflow: hidden;
+}
+#top_search {
+  border: 0 none;
+  width: 174px;
+  height: 36px;
+  font-size: 14px;
+}
+.mod-top-search button {
+  border: 0 none;
+  background-color: #fff;
+  cursor: pointer;
+  width: 35px;
+  height: 38px;
+  vertical-align: top;
+}
+.mod-top-search button i.search-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-position: 0 -40px;
+  margin: 0 auto;
+}
+.mod-top-search button:hover i.search-icon {
+  background-position: 0 -60px;
+}
+
+/* mod_search_other */
+#mod_search_other {
+  position: absolute;
+  left: 0;
+  top: 63px;
+  border: 1px solid #c9c9c9;
+  font-size: 14px;
+  padding: 5px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* search-hot */
+.search-hot {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+.search-hot li {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+}
+.search-hot li a {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding: 10px;
+}
+.search-hot li a:hover {
+  background-color: #31c27c;
+  color: #fff;
+}
+.search-hot li a:hover i {
+  color: #fff;
+}
+.search-hot li i:nth-child(1) {
+  color: #ff4222;
+}
+.search-hot li i:nth-child(3) {
+  color: #999;
+  font-size: 12px;
+}
+.search-hot li p {
+  flex: 1;
+  margin-left: 10px;
+}
+
+/* search-history */
+.search-history dt,
+.search-history .search-history-item {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.search-history dt {
+  padding: 10px;
+  color: #999;
+  justify-content: space-between;
+}
+.search-history dt a .search-history-tit-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-position: -100px 0;
+}
+.search-history dt a:hover .search-history-tit-icon{
+  background-position: -20px -60px;
+}
+.search-history dt a span,
+.search-history dd a span {
+  display: none;
+}
+.search-history dd {
+  position: relative;
+}
+.search-history .search-history-item {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  justify-content: space-between;
+}
+.search-history dd .search-history-item-remove {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.search-history .search-history-item-remove .search-history-remove-icon {
+  display: none;
+  width: 12px;
+  height: 12px;
+  margin-top: 6px;
+  background-position: 0 -240px;
+}
+.search-history dd:hover a {
+  background-color: #31c27c;
+  color: #fff;
+}
+
+.search-history dd:hover .search-history-remove-icon {
+  display: block;
+}
+
+/* search-result */
+.search-result {
+  display: none;
+}
+
+/* 公共导航栏 end */
+
 /* 侧边栏回到顶部标签 */
 #side-btn {
   font-size: 14px;
