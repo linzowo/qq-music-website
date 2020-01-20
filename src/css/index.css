@@ -36,7 +36,7 @@ a {
   color: #000;
   text-decoration: none;
 }
-a:hover{
+a:hover {
   color: #31c27c;
   text-decoration: none;
 }
@@ -67,14 +67,6 @@ input {
   margin: 0 auto;
 }
 /* 版心 */
-
-/* 当屏幕尺寸小于1240时将版心防止版心大小超过范围，同时调整margin */
-@media (max-width: 1240px) {
-  .w {
-    min-width: 900px;
-    margin: 0 50px;
-  }
-}
 
 /* 公共样式 end */
 
@@ -405,7 +397,7 @@ input {
   height: 70px;
   margin-right: 10px;
 }
-.user-data-cover-link img{
+.user-data-cover-link img {
   position: absolute;
 }
 .user-data-cover {
@@ -420,42 +412,42 @@ input {
   bottom: 0;
   right: 0;
 }
-.user-data-name{
+.user-data-name {
   position: absolute;
   top: 35px;
 }
-.user-data-lv{
+.user-data-lv {
   position: absolute;
   top: 55px;
   left: 80px;
 }
-.user-data-lv a{
+.user-data-lv a {
   margin-right: -5px;
 }
 /* user_data */
 
 /* user_tool_bar */
 /* user_tool_bar */
-#user_tool_bar{
+#user_tool_bar {
   padding-top: 13px;
   padding-bottom: 6px;
 }
-#user_tool_bar li{
+#user_tool_bar li {
   margin-bottom: 16px;
   font-size: 15px;
   position: relative;
 }
-#user_tool_bar .user-tool-bar-vip{
+#user_tool_bar .user-tool-bar-vip {
   height: 40px;
 }
-#user_tool_bar .user-tool-bar-item a{
+#user_tool_bar .user-tool-bar-item a {
   display: block;
 }
 #user_tool_bar .user-tool-bar-vip a {
   position: absolute;
   top: 0;
 }
-#user_tool_bar li span{
+#user_tool_bar li span {
   font-size: 12px;
   position: absolute;
   bottom: 0;
@@ -497,7 +489,7 @@ input {
   border-color: #2caf6f;
   color: #fff;
 }
-.open-vip{
+.open-vip {
   position: absolute;
   margin: 0;
   top: 0;
@@ -532,3 +524,40 @@ input {
   background-image: url("../images/icon_sprite.png");
   background-position: -180px 0;
 }
+
+/* 当屏幕尺寸小于1240时将版心防止版心大小超过范围，同时调整margin */
+@media (max-width: 1240px) {
+  .w {
+    min-width: 900px;
+    margin: 0 50px;
+  }
+}
+
+@media (max-width: 1220px) {
+  .mod-btn.open-music {
+    display: none;
+  }
+  .mod-top-search {
+    right: 190px;
+  }
+}
+
+@media (max-width: 1170px) {
+  /* 隐藏搜索框,并添加响应式效果 */
+  #top_search {
+    width: 0;
+    transition: width .6s ease-out;
+  }
+  .mod-top-search .search-input {
+    padding: 0;
+    transition: width .6s ease-out;
+  }
+  .mod-top-search:hover .search-input{
+    padding-left: 10px;
+  }
+  .search-input:hover #top_search {
+    width: 174px;
+  }
+
+}
+
