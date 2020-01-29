@@ -10,6 +10,7 @@ a {
   text-decoration: none;
   color: #000;
 }
+
 .fixed-flag {
   position: fixed;
   top: 160px;
@@ -47,7 +48,10 @@ a {
   color: #fff;
   background-color: #31c27c;
 }
-
+.fixed-flag-btn:hover{
+  color: #fff;
+  background-color: #2caf6f;
+}
 .fixed-flag-btn-icon {
   display: inline-block;
   width: 13px;

@@ -10,6 +10,8 @@ import "./css/index.css";
 import "./css/gotop.css";
 // 右上角下载引导样式
 import "./css/fixed-flag.css";
+// 顶部公共导航栏样式
+import "./pages/common/common-index-nav/common-index-nav.css";
 
 // 创建一个侧边固定按钮，并设置相关属性及样式
 let gotop = new GoTop("#side-btn",null, {
