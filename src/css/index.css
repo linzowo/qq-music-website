@@ -14,9 +14,11 @@ i,
 p,
 dl,
 dt,
-dd {
+dd,
+nav {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body,
@@ -71,7 +73,7 @@ input {
 /* 公共样式 end */
 
 /* 主页导航区 start */
-header{
+nav{
   padding-left: 230px;
 }
 .index-nav{
