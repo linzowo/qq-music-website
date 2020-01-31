@@ -1,0 +1,202 @@
+.mod-index {
+  position: relative;
+
+  &:hover {
+    .slide-action-btn {
+      opacity: 1;
+      transform: translateX(0);
+      transition-property: opacity, transform, background, width;
+      transition-duration: 0.5s;
+    }
+  }
+}
+.icon-text {
+  display: none;
+}
+/* 区域标题 */
+.mod-index-hd {
+  padding: 50px 0 24px 0;
+}
+.mod-index-tit {
+  margin: 0 auto;
+  width: 196px;
+  height: 40px;
+  background-image: url("https://y.gtimg.cn/mediastyle/yqq/img/index_tit.png?max_age=2592000&v=c7310a1eb12fc9fce032314be79ad579");
+  background-image: -webkit-image-set(
+    url("https://y.gtimg.cn/mediastyle/yqq/img/index_tit.png?max_age=2592000&v=c7310a1eb12fc9fce032314be79ad579")
+      1x,
+    url("https://y.gtimg.cn/mediastyle/yqq/img/index_tit@2x.png?max_age=2592000&v=c7310a1eb12fc9fce032314be79ad579&v=832652e82398ecb5a5cd2fed700baee2")
+      2x
+  );
+}
+/* 导航标签 */
+.mod-index-tab {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  height: 50px;
+}
+.mod-index-tab a {
+  margin: 0 24px;
+  font-size: 15px;
+}
+/* 轮播标记 */
+.mod-slide-switch {
+  text-align: center;
+  font-size: 0;
+
+  .slide-switch-item {
+    display: inline-block;
+    width: 28px;
+    height: 12px;
+    padding: 0 0 26px;
+
+    .slide-switch-bg {
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 12px;
+      background-color: rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+    }
+    &:hover {
+      .slide-switch-bg {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  .slide-switch-item-current .slide-switch-bg {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* 左右箭头 */
+.mod-slide-action {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .slide-action {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    // background-color: pink;
+  }
+
+  .mod-slide-action-left,
+  .slide-action-btn-left {
+    left: 0;
+  }
+  .mod-slide-action-right,
+  .slide-action-btn-right {
+    right: 0;
+  }
+
+  .slide-action-btn-left {
+    transform: translateX(-100%);
+  }
+  .slide-action-btn-right {
+    transform: translateX(100%);
+  }
+
+  .slide-action-btn {
+    position: absolute;
+    top: 50%;
+    width: 79px;
+    height: 108px;
+    margin-top: -54px;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 0.5s;
+
+    .slide-action-arrow {
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 40px;
+      margin-top: -20px;
+    }
+    .slide-action-arrow-left {
+      left: 29px;
+      background-position: -20px -120px;
+    }
+
+    .slide-action-arrow-right {
+      right: 29px;
+      background-position: 0px -120px;
+    }
+  }
+}
+
+/* 区块背景色 */
+.mod-bg {
+  background: url(https://y.gtimg.cn/mediastyle/yqq/img/bg_detail.jpg) 50% 0
+    repeat-x;
+}
+
+/* 区域样式 */
+.mod-index,
+.section-inner {
+  z-index: 2;
+  overflow: hidden;
+}
+
+// 封面效果
+.playlist-cover {
+  margin-bottom: 15px;
+
+  a {
+    display: block;
+    position: relative;
+  }
+  img {
+    width: 100%;
+    transform: scale(1) translateZ(0);
+    transition: transform 0.75s;
+  }
+  .mod-cover-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .mod-cover-icon-play {
+    width: 70px;
+    height: 70px;
+    left: 50%;
+    top: 50%;
+    margin-left: -35px;
+    margin-top: -35px;
+    visibility: hidden;
+    position: absolute;
+    background-image: url("https://y.gtimg.cn/mediastyle/yqq/img/cover_play.png?max_age=2592000&v=88abebcbc1242dbbbbc836cc3e04a006");
+    background-image: -webkit-image-set(
+      url("https://y.gtimg.cn/mediastyle/yqq/img/cover_play.png?max_age=2592000&v=88abebcbc1242dbbbbc836cc3e04a006")
+        1x,
+      url("https://y.gtimg.cn/mediastyle/yqq/img/cover_play@2x.png?max_age=2592000&v=88abebcbc1242dbbbbc836cc3e04a006&v=10e4305a2558d496548955434eaa30d9")
+        2x
+    );
+  }
+
+  &:hover {
+    .mod-cover-icon-play {
+      visibility: visible;
+    }
+    img {
+      transform: scale(1.07) translateZ(0);
+      transition: transform 0.75s cubic-bezier(0, 1, 0.75, 1);
+      -webkit-transform: scale(1.07) translateZ(0);
+      -webkit-transition: -webkit-transform 0.75s cubic-bezier(0, 1, 0.75, 1);
+    }
+  }
+}

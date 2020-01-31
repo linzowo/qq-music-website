@@ -4,8 +4,12 @@
 import GoTop from "./js/util/gotop.js";
 
 // 引入css文件
+// 公共样式
+import "./css/common.scss";
+// 小组件样式文件
+import "./css/mod-index-common.scss";
 // 主页样式文件
-import "./css/index.css";
+import "./css/index.scss";
 // 右下角固定按钮样式文件
 import "./css/gotop.css";
 // 右上角下载引导样式

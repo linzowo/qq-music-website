@@ -1,0 +1,82 @@
+// 公共样式
+
+/* 公共样式 start */
+html,
+body,
+div,
+ul,
+li,
+button,
+i,
+p,
+dl,
+dt,
+dd,
+nav,
+img,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+th {
+  color: #000;
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: poppin, Tahoma, Arial, \5fae\8f6f\96c5\9ed1, sans-serif;
+  font-family: Tahoma, Arial, \5fae\8f6f\96c5\9ed1, sans-serif/9;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+a.current {
+  color: #31c27c;
+}
+a:hover {
+  color: #31c27c;
+  text-decoration: none;
+}
+i {
+  font-style: normal;
+  font-weight: normal;
+}
+li {
+  list-style: none;
+}
+input {
+  outline-style: none;
+}
+
+/* 精灵图背景 */
+.sprite {
+  background-image: url("../images/icon_sprite.png");
+  background-image: -webkit-image-set(
+    url("../images/icon_sprite.png") 1x,
+    url("../images/icon_sprite@2x.png") 2x
+  );
+}
+/* 精灵图背景 */
+
+/* 版心 */
+.w,
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+/* 版心 */
+
+/* 公共样式 end */
