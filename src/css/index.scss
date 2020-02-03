@@ -33,15 +33,17 @@ nav {
 .mod-playlist {
   overflow: hidden;
   height: 330px;
+  position: relative;
 }
 .mod-playlist ul.playlist-list {
   display: flex;
   flex-direction: row;
   width: 1250%;
+  position: absolute;
 
   .playlist-item {
-    width: 1.5%;
-    margin-right: 20px;
+    width: 1.6%;
+    padding-right: 20px;
     overflow: hidden;
 
     .playlist-item-box {

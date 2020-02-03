@@ -49,6 +49,10 @@ a:hover {
   color: #31c27c;
   text-decoration: none;
 }
+a:focus{
+  outline-style: none;
+  -moz-outline-style: none;
+}
 i {
   font-style: normal;
   font-weight: normal;

@@ -1,1 +1,65 @@
-<template>hello</template>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  div {
+    width: 300px;
+    height: 300px;
+    background-color: pink;
+    position: absolute;
+    /* left: 0; */
+    top: 50px;
+    opacity: 1;
+  }
+</style>
+
+<input type="button" id="btn" value="移动" />
+<div id="dv"></div>
+
+<script src="../js/common.js"></script>
+<script>
+  var my$ = function(id) {
+    // 通过id获取元素
+    return document.getElementById(id);
+  };
+  //   console.log(getType("100%"));
+  //   console.log(getStyle(document.querySelector("div"), "left"));
+  //   console.log(parseFloat(getStyle(document.querySelector("div"), "left")));
+  //   console.log(getType(getStyle(document.querySelector("div"), "left")));
+
+  // 测试========================================================
+  my$("btn").onclick = function() {
+    // animate(my$("dv"),800);B
+    // 获取元素的任意属性值
+    // console.log(getStyle(my$("dv"),"left"));
+    // 修改某个元素任意一个属性值
+    // animate(my$("dv"),"left",400);
+    // animate(my$("dv"),"top",400);
+    // animate(my$("dv"),"height",400);
+    // animate(my$("dv"),"width",400);
+    // 一次改变多个值及回调函数
+    var json1 = { left: 400, height: 400, width: 200, top: 100 };
+    var json2 = { left: 800, height: 800, width: 400, top: 200 };
+    var json3 = { left: 400, height: 400, width: 200, top: 100 };
+    var json4 = { left: 0, height: 300, width: 300, top: 50, opacity: 0.3 };
+    animate(my$("dv"), json1, function() {
+      animate(my$("dv"), json2, function() {
+        animate(my$("dv"), json3, function() {
+          animate(my$("dv"), json4);
+        });
+      });
+    });
+    // var json1 = {
+    //   left: 389.88,
+    //   height: 400,
+    //   width: 200,
+    //   top: 100,
+    //   opacity: 0.3
+    // };
+    // animate(my$("dv"), json1,()=>{
+    //     console.log("完成");
+
+    // });
+  };
+</script>
