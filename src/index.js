@@ -43,12 +43,13 @@ btn_gotop.classList.add("side-gotop");
 // 为网页播放器添加样式
 btn_player.classList.add("side-player");
 
-// 轮播左右按钮
-let jump_btn_arr = document.querySelectorAll(".js-jump");
+// 左右轮播相关效果
+(function() {
+  // 轮播左右按钮
+  let mod_index_list = document.querySelectorAll(".mod-index");
 
-// 为跳转按钮注册点击事件
-jump_btn_arr.forEach(ele => {
-  ele.addEventListener("click", function() {
+  // jump_btn点击事件处理函数
+  function jumpBtnClickHandle() {
     // 判断当前点击的按钮是哪个区域的按钮
     // 获取要操作的目标区域
     let stat_arr = this.dataset.stat.split(".");
@@ -57,7 +58,7 @@ jump_btn_arr.forEach(ele => {
     let parentWidth = targetEle.parentElement.offsetWidth;
 
     // 当前轮播标记所在的元素
-    let slide_switch_item_current = document.querySelector(
+    let slide_switch_item_current = targetEle.parentElement.parentElement.querySelector(
       ".slide-switch-item-current"
     );
     // 移除当前标记
@@ -76,9 +77,6 @@ jump_btn_arr.forEach(ele => {
       let last_slide_switch_item = getLastElementChild(
         slide_switch_item_current.parentElement
       );
-      // let all_brother_slide_switch_item = getBrotherElementAll(
-      //   slide_switch_item_current
-      // );
 
       switch (this.dataset.p) {
         case "prev":
@@ -130,13 +128,28 @@ jump_btn_arr.forEach(ele => {
     // 判断当前按钮的类别
 
     // 执行指定操作
+  }
+  // 为跳转按钮注册点击事件
+  mod_index_list.forEach(ele => {
+    ele.addEventListener("click", function(evt) {
+      if (evt.target.classList.contains("js-jump")) {
+        jumpBtnClickHandle.call(evt.target);
+      }
+
+      if (
+        evt.target.classList.contains("slide-action-arrow") ||
+        evt.target.classList.contains("slide-switch-bg")
+      ) {
+        jumpBtnClickHandle.call(evt.target.parentElement);
+      }
+    });
   });
-});
+})();
 
-// 轮播图动画效果
+// 左右轮播相关效果
 
-// 切换轮播标记
-function toggleTag(currentEle, targetEle, className) {
-  currentEle.classList.remove(className);
-  targetEle.classList.add(className);
-}
+//
+// 获取mod中的类别切换元素
+let mod_index_tab_list = document.querySelectorAll(".mod-index-tab");
+
+// 注册点击事件，（使用代理模式注册）以便覆盖到所有子元素
