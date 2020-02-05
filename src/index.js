@@ -43,7 +43,7 @@ btn_gotop.classList.add("side-gotop");
 // 为网页播放器添加样式
 btn_player.classList.add("side-player");
 
-// 左右轮播相关效果
+// mod-index相关效果
 (function() {
   // 轮播左右按钮
   let mod_index_list = document.querySelectorAll(".mod-index");
@@ -132,6 +132,7 @@ btn_player.classList.add("side-player");
   // 为跳转按钮注册点击事件
   mod_index_list.forEach(ele => {
     ele.addEventListener("click", function(evt) {
+      // 轮播相关动画关联效果实现
       if (evt.target.classList.contains("js-jump")) {
         jumpBtnClickHandle.call(evt.target);
       }
@@ -142,14 +143,26 @@ btn_player.classList.add("side-player");
       ) {
         jumpBtnClickHandle.call(evt.target.parentElement);
       }
+      // 轮播相关动画关联效果实现
+
+      // tab nav切换相关
+      // 判断点击的目标是否为tab标签
+      if (evt.target.classList.contains("mod-index-tab-link")) {
+        // console.dir(evt.target);
+        // 获取元素上绑定的数据信息
+        // 生成ajax请求
+        // 根据响应信息刷新页面数据
+        // 切换tab栏显示的current
+        let current_tab = evt.target.parentElement.parentElement.querySelector(
+          ".mod-index-tab-link.current"
+        );
+        current_tab.classList.remove("current");
+        evt.target.classList.add("current");
+      }
+
+      // tab nav切换相关
     });
   });
 })();
 
-// 左右轮播相关效果
-
-//
-// 获取mod中的类别切换元素
-let mod_index_tab_list = document.querySelectorAll(".mod-index-tab");
-
-// 注册点击事件，（使用代理模式注册）以便覆盖到所有子元素
+// mod-index相关效果
