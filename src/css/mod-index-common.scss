@@ -150,18 +150,30 @@
   overflow: hidden;
 }
 
+.mod-slide {
+  overflow: hidden;
+  position: relative;
+}
+.slide-list {
+  width: 1250%;
+  position: relative;
+}
+
 // 封面效果
 .playlist-cover {
   margin-bottom: 15px;
+}
 
-  a {
-    display: block;
-    position: relative;
-  }
+a.mod-cover-link {
+  display: block;
+  position: relative;
+
   img {
     width: 100%;
     transform: scale(1) translateZ(0);
     transition: transform 0.75s;
+    -webkit-transform: scale(1) translateZ(0);
+    -webkit-transition: transform 0.75s;
   }
   .mod-cover-mask {
     position: absolute;
@@ -169,6 +181,15 @@
     left: 0;
     bottom: 0;
     right: 0;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+    width: 100%;
+    transform: scale(1) translateZ(0);
+    transition: transform 0.75s;
+    -webkit-transform: scale(1) translateZ(0);
+    -webkit-transition: transform 0.75s;
   }
   .mod-cover-icon-play {
     width: 70px;
@@ -177,7 +198,13 @@
     top: 50%;
     margin-left: -35px;
     margin-top: -35px;
-    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.7) translateZ(0);
+    transition-property: opacity, transform;
+    transition-duration: 0.5s;
+    -webkit-transform: scale(0.7) translateZ(0);
+    -webkit-transition-property: opacity, -webkit-transform;
+    -webkit-transition-duration: 0.5s;
     position: absolute;
     background-image: url("https://y.gtimg.cn/mediastyle/yqq/img/cover_play.png?max_age=2592000&v=88abebcbc1242dbbbbc836cc3e04a006");
     background-image: -webkit-image-set(
@@ -193,6 +220,24 @@
       visibility: visible;
     }
     img {
+      transform: scale(1.07) translateZ(0);
+      transition: transform 0.75s cubic-bezier(0, 1, 0.75, 1);
+      -webkit-transform: scale(1.07) translateZ(0);
+      -webkit-transition: -webkit-transform 0.75s cubic-bezier(0, 1, 0.75, 1);
+    }
+    .mod-cover-icon-play {
+      opacity: 0.9;
+      transform: scale(1) translateZ(0);
+      transition-property: opacity, transform;
+      transition-duration: 0.5s;
+      -webkit-transform: scale(1) translateZ(0);
+      -webkit-transition-property: opacity, -webkit-transform;
+      -webkit-transition-duration: 0.5s;
+    }
+    .mod-cover-mask {
+      opacity: 0.2;
+      transition: opacity 0.5s;
+      -webkit-transition: opacity 0.5s;
       transform: scale(1.07) translateZ(0);
       transition: transform 0.75s cubic-bezier(0, 1, 0.75, 1);
       -webkit-transform: scale(1.07) translateZ(0);

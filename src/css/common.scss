@@ -25,6 +25,15 @@ h6 {
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
 body,
 button,
 input,
@@ -49,7 +58,7 @@ a:hover {
   color: #31c27c;
   text-decoration: none;
 }
-a:focus{
+a:focus {
   outline-style: none;
   -moz-outline-style: none;
 }
@@ -83,4 +92,61 @@ input {
 }
 /* 版心 */
 
+// 按钮相关公共设置
+.mod-btn-icon-add,
+.mod-btn-icon-batch,
+.mod-btn-icon-comment,
+.mod-btn-icon-copy,
+.mod-btn-icon-delete,
+.mod-btn-icon-down,
+.mod-btn-icon-edit,
+.mod-btn-icon-input,
+.mod-btn-icon-less,
+.mod-btn-icon-like,
+.mod-btn-icon-manage,
+.mod-btn-icon-menu,
+.mod-btn-icon-more,
+.mod-btn-icon-new,
+.mod-btn-icon-no,
+.mod-btn-icon-play,
+.mod-btn-icon-qr,
+.mod-btn-icon-recovery,
+.mod-btn-icon-upload,
+.mod-btn-icon-yes,
+.mod-btn-green-icon-add,
+.mod-btn-green-icon-clear,
+.mod-btn-green-icon-delete,
+.mod-btn-green-icon-down,
+.mod-btn-green-icon-like,
+.mod-btn-green-icon-more,
+.mod-btn-green-icon-play,
+.mod-btn-green-icon-radio {
+  display: inline-block;
+  margin-right: 6px;
+  background-image: url(https://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png?max_age=2592000&v=85678e8f28c7b4bcad5c209b21b7e3b3&v=85678e8f28c7b4bcad5c209b21b7e3b3);
+  background-image: -webkit-image-set(url(https://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png?max_age=2592000&v=85678e8f28c7b4bcad5c209b21b7e3b3&v=85678e8f28c7b4bcad5c209b21b7e3b3) 1x,url(https://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png?max_age=2592000&v=85678e8f28c7b4bcad5c209b21b7e3b3&v=85678e8f28c7b4bcad5c209b21b7e3b3&v=ce93ff148404a1f9918b8bc107e7dd6b) 2x);
+  background-repeat: no-repeat;
+  vertical-align: -3px;
+}
+
+
+// 按钮公共样式
+.mod-btn {
+  display: inline-block;
+  padding: 0 23px;
+  height: 38px;
+  line-height: 39px;
+  font-size: 13px;
+  border: 1px solid #c9c9c9;
+  border-radius: 2px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 24px 0 0 10px;
+  text-align: center;
+}
+.mod-btn:hover {
+  background-color: #ededed;
+  color: #333;
+}
 /* 公共样式 end */

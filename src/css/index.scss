@@ -30,16 +30,12 @@ nav {
 /* 主页内容 start */
 
 /* 热门歌单 */
-.mod-playlist {
-  overflow: hidden;
-  height: 330px;
-  position: relative;
+.mod-slide {
+  margin-bottom: 20px;
 }
 .mod-playlist ul.playlist-list {
   display: flex;
   flex-direction: row;
-  width: 1250%;
-  position: absolute;
 
   .playlist-item {
     width: 1.6%;
@@ -49,7 +45,6 @@ nav {
     .playlist-item-box {
       width: 100%;
       overflow: hidden;
-      
 
       .playlist-title {
         font-weight: 400;
@@ -63,6 +58,86 @@ nav {
       }
     }
   }
+}
+
+// 新歌首发
+.mod-index-song{
+  .mod-btn{
+    position: absolute;
+    left: 0;
+    top: initial;
+    margin-top: -10px;
+
+    .mod-btn-icon-play{
+      width: 13px;
+      height: 16px;
+      background-position: -60px -220px;
+    }
+  }
+}
+.mod-songlist-hd .mod-index-tit {
+  background-position: 0 -50px;
+}
+
+.songlist-item {
+  width: 8%;
+  display: inline-block;
+}
+.songlist-item-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  li {
+    width: 33.33%;
+
+    .songlist-item-box {
+      height: 86px;
+      padding-top: 12px;
+      font-size: 14px;
+      margin: -1px 30px 13px 0;
+      border-top: 1px solid #f2f2f2;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+
+      .mod-cover-link {
+        width: 86px;
+        height: 86px;
+      }
+      .songlist-cont {
+        max-width: 50%;
+        margin-left: 10px;
+        flex: 1;
+
+        .js-song {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .mod-cover-icon-play{
+      background-size: 68%;
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+  }
+}
+.songlist-song {
+  padding-bottom: 2px;
+}
+.songlist-author {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #999;
+}
+.c-tx-thin {
+  color: #999;
+}
+.songlist-time {
+  margin-left: auto; // 保证其靠右对齐
 }
 /* 主页内容 end */
 

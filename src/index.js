@@ -87,11 +87,23 @@ btn_player.classList.add("side-player");
 
           // 执行动画
           if (!prev_slide_switch_item) {
-            targetEle.style.left = "0px";
+            // targetEle.style.left = "0px";
+            targetEle.style.left =
+              -1 *
+                slide_switch_item_current.parentElement.childElementCount *
+                parentWidth +
+              "px";
           }
-          animate(targetEle, {
-            left: parseInt(getStyle(targetEle, "left")) - parentWidth
-          });
+          animate(
+            targetEle,
+            {
+              left: parseInt(getStyle(targetEle, "left")) + parentWidth
+            },
+            function() {
+              targetEle.style.left =
+                (parseInt(targetEle.style.left) / parentWidth) * 100 + "%";
+            }
+          );
           break;
         case "next":
           next_slide_switch_item
@@ -101,16 +113,18 @@ btn_player.classList.add("side-player");
               );
 
           if (next_slide_switch_item == last_slide_switch_item) {
-            targetEle.style.left =
-              -1 *
-                slide_switch_item_current.parentElement.childElementCount *
-                parentWidth +
-              "px";
-            // targetEle.style.left = "0px";
+            targetEle.style.left = "0px";
           }
-          animate(targetEle, {
-            left: parseInt(getStyle(targetEle, "left")) + parentWidth
-          });
+          animate(
+            targetEle,
+            {
+              left: parseInt(getStyle(targetEle, "left")) - parentWidth
+            },
+            function() {
+              targetEle.style.left =
+                (parseInt(targetEle.style.left) / parentWidth) * 100 + "%";
+            }
+          );
           break;
 
         default:
