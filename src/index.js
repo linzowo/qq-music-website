@@ -87,7 +87,6 @@ btn_player.classList.add("side-player");
 
           // 执行动画
           if (!prev_slide_switch_item) {
-            // targetEle.style.left = "0px";
             targetEle.style.left =
               -1 *
                 slide_switch_item_current.parentElement.childElementCount *
@@ -112,19 +111,21 @@ btn_player.classList.add("side-player");
                 "slide-switch-item-current"
               );
 
-          if (next_slide_switch_item == last_slide_switch_item) {
-            targetEle.style.left = "0px";
-          }
+          // if (next_slide_switch_item == last_slide_switch_item) {
           animate(
             targetEle,
             {
               left: parseInt(getStyle(targetEle, "left")) - parentWidth
             },
             function() {
+              if (!next_slide_switch_item) {
+                targetEle.style.left = "0px";
+              }
               targetEle.style.left =
                 (parseInt(targetEle.style.left) / parentWidth) * 100 + "%";
             }
           );
+
           break;
 
         default:

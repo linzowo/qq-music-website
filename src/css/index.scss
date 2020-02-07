@@ -139,6 +139,31 @@ nav {
 .songlist-time {
   margin-left: auto; // 保证其靠右对齐
 }
+
+// 精彩推荐
+.mod-index-event{
+  // 标题
+  .mod-index-tit{
+    background-position: 0 -100px;
+  }
+}
+.event-list{
+  display: flex;
+  flex-direction: row;
+
+  .event-list-item {
+    width: 4%;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+  .event-list-link{
+    display: block;
+  }
+  .event-list-pic{
+    width: 100%;
+  }
+}
+
 /* 主页内容 end */
 
 /* 侧边栏回到顶部标签 */
