@@ -61,14 +61,14 @@ nav {
 }
 
 // 新歌首发
-.mod-index-song{
-  .mod-btn{
+.mod-index-song {
+  .mod-btn {
     position: absolute;
     left: 0;
     top: initial;
     margin-top: -10px;
 
-    .mod-btn-icon-play{
+    .mod-btn-icon-play {
       width: 13px;
       height: 16px;
       background-position: -60px -220px;
@@ -118,7 +118,7 @@ nav {
       }
     }
 
-    .mod-cover-icon-play{
+    .mod-cover-icon-play {
       background-size: 68%;
       background-repeat: no-repeat;
       background-position: 50%;
@@ -141,13 +141,13 @@ nav {
 }
 
 // 精彩推荐
-.mod-index-event{
+.mod-index-event {
   // 标题
-  .mod-index-tit{
+  .mod-index-tit {
     background-position: 0 -100px;
   }
 }
-.event-list{
+.event-list {
   display: flex;
   flex-direction: row;
 
@@ -156,14 +156,53 @@ nav {
     padding-right: 20px;
     box-sizing: border-box;
   }
-  .event-list-link{
+  .event-list-link {
     display: block;
   }
-  .event-list-pic{
+  .event-list-pic {
     width: 100%;
   }
 }
 
+// 新碟首发
+.mod-index-album {
+  .index-more {
+    position: absolute;
+    right: 0;
+
+    .icon-index-arrow {
+      display: inline-block;
+      width: 7px;
+      height: 12px;
+      margin-left: 3px;
+      background-position: -120px -40px;
+    }
+
+    &:hover {
+      .icon-index-arrow {
+        background-position: -120px -60px;
+      }
+    }
+  }
+
+  .album-list{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .album-list-item{
+    box-sizing: border-box;
+    width: 20%;
+    padding:0 0 25px 20px;
+  }
+
+  .album-list-cover{
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
 /* 主页内容 end */
 
 /* 侧边栏回到顶部标签 */
