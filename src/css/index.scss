@@ -166,43 +166,184 @@ nav {
 
 // 新碟首发
 .mod-index-album {
-  .index-more {
-    position: absolute;
-    right: 0;
-
-    .icon-index-arrow {
-      display: inline-block;
-      width: 7px;
-      height: 12px;
-      margin-left: 3px;
-      background-position: -120px -40px;
-    }
-
-    &:hover {
-      .icon-index-arrow {
-        background-position: -120px -60px;
-      }
-    }
-  }
-
-  .album-list{
+  .album-list {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
 
-  .album-list-item{
+  .album-list-item {
     box-sizing: border-box;
     width: 20%;
-    padding:0 0 25px 20px;
+    padding: 0 0 25px 20px;
   }
 
-  .album-list-cover{
+  .album-list-cover {
     width: 100%;
     margin-bottom: 15px;
   }
 }
+
+// 排行榜
+.mod-index-top {
+  .mod-index-tit {
+    background-position: 0 -200px;
+  }
+  .toplist-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .index-more {
+    top: 56px;
+  }
+}
+
+.toplist-list-item {
+  width: 20%;
+  box-sizing: border-box;
+  padding-right: 20px;
+
+  .toplist-box {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+
+    .toplist-bg,
+    .mod-cover-icon-play,
+    .toplist-line,
+    .toplist-hd,
+    .toplist-songlist {
+      position: absolute;
+    }
+
+    &:hover {
+      .toplist-bg {
+        transform: scale(1.06) translateZ(0);
+        -webkit-transform: scale(1.06) translateZ(0);
+        transition: transform 0.75s;
+        -webkit-transition: transform 0.75s;
+      }
+      .toplist-line {
+        display: none;
+      }
+    }
+  }
+
+  .toplist-bg {
+    width: 100%;
+    height: 567px;
+    z-index: -1;
+    background-image: url(https://y.gtimg.cn/mediastyle/yqq/img/bg_index_top.jpg?max_age=2592000&v=3beef369200a0863560787fd560c8205);
+    transform: scale(1) translateZ(0);
+    -webkit-transform: scale(1) translateZ(0);
+    transition: transform 0.75s;
+    -webkit-transition: transform 0.75s;
+  }
+
+  .toplist-hd {
+    width: 200px;
+    top: 50px;
+    left: 50%;
+    margin-left: -100px;
+    text-align: center;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 66px;
+      height: 22px;
+      margin: 0 auto 9px;
+      background-image: url(https://y.gtimg.cn/mediastyle/yqq/img/index_tit.png?max_age=2592000&v=c7310a1eb12fc9fce032314be79ad579);
+      background-image: -webkit-image-set(url(https://y.gtimg.cn/mediastyle/yqq/img/index_tit.png?max_age=2592000&v=c7310a1eb12fc9fce032314be79ad579) 1x,
+      url(https://y.gtimg.cn/mediastyle/yqq/img/index_tit@2x.png?max_age=2592000&v=c7310a1eb12fc9fce032314be79ad579&v=832652e82398ecb5a5cd2fed700baee2) 2x);
+      background-position: 0 -300px;
+    }
+
+    .toplist-tit {
+      height: 36px;
+      line-height: 1;
+      font-size: 26px;
+      color: #fff;
+      font-weight: 400;
+    }
+  }
+
+  .toplist-line {
+    top: 148px;
+    width: 36px;
+    height: 2px;
+    background-color: #fff;
+    left: 50%;
+    margin-left: -18px;
+  }
+
+  .mod-cover-icon-play {
+    top: 114px;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-size: 72%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+
+  .toplist-songlist {
+    top: 188px;
+    left: 28px;
+    right: 28px;
+    color: #fff;
+    font-size: 14px;
+
+    .toplist-song {
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 27px;
+    }
+    .toplist-song-number {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .toplist-songname {
+      text-overflow: ellipsis;
+      margin-bottom: 5px;
+      overflow: hidden;
+    }
+    a {
+      color: #fff;
+    }
+  }
+
+  
+  &:nth-child(1) {
+    .toplist-bg {
+      background-position: 0 0;
+    }
+  }
+  &:nth-child(2) {
+    .toplist-bg {
+      background-position: -224px 0;
+    }
+  }
+  &:nth-child(3) {
+    .toplist-bg {
+      background-position: -448px 0;
+    }
+  }
+  &:nth-child(4) {
+    .toplist-bg {
+      background-position: -672px 0;
+    }
+  }
+  &:nth-child(5) {
+    .toplist-bg {
+      background-position: -896px 0;
+    }
+  }
+}
+
 /* 主页内容 end */
 
 /* 侧边栏回到顶部标签 */

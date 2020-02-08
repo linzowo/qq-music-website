@@ -11,6 +11,8 @@ import {
   getNextElement,
   getBrotherElementAll
 } from "./js/common.js";
+// 引入ajax模块
+import ajax from "./pages/common/ajax/ajax.js";
 // 引入侧边固定按钮组件
 import GoTop from "./js/util/gotop.js";
 
@@ -181,3 +183,14 @@ btn_player.classList.add("side-player");
 })();
 
 // mod-index相关效果
+
+// 测试ajax
+// ajax("get", "https://c.y.qq.com/soso/fcgi-bin/client_search_cp", {
+//   p: 1,
+//   n: 2,
+//   w: "泡沫",
+//   format: "json"
+// },function(res){
+//   console.log(res);
+  
+// });
