@@ -316,7 +316,6 @@ nav {
     }
   }
 
-  
   &:nth-child(1) {
     .toplist-bg {
       background-position: 0 0;
@@ -340,6 +339,39 @@ nav {
   &:nth-child(5) {
     .toplist-bg {
       background-position: -896px 0;
+    }
+  }
+}
+
+// mv
+.mod-index-mv {
+  .mv-list{
+    display: flex;
+    flex-direction: row;
+  }
+  .mv-list-item {
+    width: 8%;
+    .playlist-list {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .playlist-item {
+        width: 20%;
+        padding-bottom: 25px;
+      }
+    }
+  }
+
+  .mv-list-listen{
+    .mv-list-listen-icon{
+      display: inline-block;
+      width: 19px;
+      height: 12px;
+      margin-right: 5px;
+      background-position: -180px -20px;
+      vertical-align: -1px;
     }
   }
 }

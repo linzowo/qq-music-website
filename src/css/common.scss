@@ -54,7 +54,8 @@ a {
 a.current {
   color: #31c27c;
 }
-a:hover {
+a:hover,
+.mv-list-singer a:hover {
   color: #31c27c;
   text-decoration: none;
 }
@@ -62,6 +63,13 @@ a:focus {
   outline-style: none;
   -moz-outline-style: none;
 }
+
+// 颜色相关公共设置
+.mv-list-singer a,
+.mv-list-listen {
+  color: #999;
+}
+
 i {
   font-style: normal;
   font-weight: normal;

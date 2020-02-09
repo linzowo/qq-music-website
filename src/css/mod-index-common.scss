@@ -268,3 +268,10 @@ a.mod-cover-link:hover,
     }
   }
 }
+
+
+.mv-list-item-title{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
