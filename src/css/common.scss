@@ -66,8 +66,15 @@ a:focus {
 
 // 颜色相关公共设置
 .mv-list-singer a,
-.mv-list-listen {
+.mv-list-listen,
+.footer,
+.footer a,
+.footer-download-list-item a {
   color: #999;
+}
+
+.footer {
+  background-color: #333;
 }
 
 i {
@@ -171,4 +178,8 @@ input {
 
 .playlist-author a:hover {
   color: #31c27c;
+}
+
+.icon-txt {
+  display: none;
 }

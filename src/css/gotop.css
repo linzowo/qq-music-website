@@ -16,7 +16,6 @@ a {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background-color: #fff;
   z-index: 999;
 }
 
@@ -29,6 +28,7 @@ a {
   display: block;
   box-sizing: border-box;
   text-align: center;
+  background-color: #fff;
 }
 
 .gotop-container a:hover {

@@ -1,0 +1,200 @@
+// 公共设置
+
+.footer,
+.footer a,
+.footer-download-list-item a {
+  color: #999;
+}
+
+.footer {
+  background-color: #333;
+}
+
+.icon-txt {
+  display: none;
+}
+
+.footer a:hover {
+  color: #31c27c;
+}
+
+// 各个模块定位位置
+.footer-group,
+.footer-platform {
+  top: 230px;
+}
+.footer-product,
+.footer-group {
+  left: 476px;
+}
+.footer-link {
+  right: 0;
+}
+
+.icon-qm-android,
+.icon-qm-iphone,
+.icon-qm-kg,
+.icon-qm-mac,
+.icon-qm-pc,
+.icon-qm-qp,
+.icon-qm-ss {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 29px 12px;
+  background-image: url(https://y.gtimg.cn/mediastyle/yqq/img/footer.png?max_age=2592000&v=2c8fc360fec8704d735687beb9098d2d);
+  background-image: -webkit-image-set(url(https://y.gtimg.cn/mediastyle/yqq/img/footer.png?max_age=2592000&v=2c8fc360fec8704d735687beb9098d2d&v=2c8fc360fec8704d735687beb9098d2d) 1x,
+    url(https://y.gtimg.cn/mediastyle/yqq/img/footer@2x.png?max_age=2592000&v=2c8fc360fec8704d735687beb9098d2d&v=2c8fc360fec8704d735687beb9098d2d&v=4949a8f5e1ee78cf716ad4c568720841) 2x);
+}
+
+.footer {
+  .section-inner {
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+    height: 589px;
+  }
+  .footer-info {
+    border-bottom: 1px solid #353535;
+    overflow: hidden;
+    margin-bottom: 45px;
+    position: relative;
+    padding-left: 10px;
+    height: 411px;
+
+    & > div {
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  .footer-tit {
+    font-size: 15px;
+    font-weight: 400;
+    padding: 80px 0 46px;
+  }
+}
+// 下载
+.footer-download {
+  .footer-download-list {
+    display: flex;
+    flex-direction: row;
+    margin-left: -29px;
+  }
+
+  .footer-download-list-item {
+    text-align: center;
+  }
+
+  .icon-qm-pc {
+    width: 37px;
+  }
+  .icon-qm-mac {
+    width: 46px;
+    background-position: -92px 0;
+  }
+  .icon-qm-android {
+    width: 37px;
+    background-position: -190px 0;
+  }
+  .icon-qm-iphone {
+    width: 34px;
+    background-position: -279px 0;
+  }
+
+  .footer-download-list-item:hover {
+    .icon-qm-pc {
+      background-position: -2px -49px;
+    }
+    .icon-qm-mac {
+      background-position: -92px -49px;
+    }
+    .icon-qm-android {
+      background-position: -190px -49px;
+    }
+    .icon-qm-iphone {
+      background-position: -279px -49px;
+    }
+    a {
+      color: #31c27c;
+    }
+  }
+}
+
+// 开放平台
+.footer-platform {
+  .footer-platform-list {
+    display: flex;
+    flex-direction: row;
+
+    .footer-platform-list-item {
+      min-width: 100px;
+      margin: 0 30px 12px 0;
+    }
+  }
+}
+
+// 产品
+.footer-product {
+  .footer-product-list {
+    width: 304px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -29px;
+  }
+  .footer-product-list-item {
+    width: 99px;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  .footer-product-list-item-pic {
+    text-align: center;
+    position: relative;
+
+    .icon-qm-kg {
+      width: 41px;
+      background-position: -370px 0;
+    }
+    .icon-qm-ss {
+      width: 37px;
+      background-position: -463px 0;
+    }
+    .icon-qm-qp {
+      width: 40px;
+      background-position: -563px 0;
+    }
+  }
+}
+
+// 合作链接
+.footer-link-list{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 300px;
+  min-width: 200px;
+  .footer-link-list-item{
+    width: 100px;
+    margin-bottom: 12px;
+  }
+}
+
+// 版权声明
+.footer-copyright{
+  padding-top: 24px;
+  p{
+    text-align: center;
+    font-size: 12px;
+    line-height: 28px;
+  }
+}
+@media (max-width:1240px){
+  .footer-link-list{
+    width: 200px;
+  }
+  .footer-product,
+  .footer-group {
+    left: 41%;
+  }
+
+}

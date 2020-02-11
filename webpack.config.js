@@ -16,7 +16,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       // 配置编译后生成的index。html文件相关信息
       title: "Output Management",
-      template: "html-loader!src/index.html" // 通过加入html-loader！标签指定在使用模板时先通过html-loader编译，解决图片等外部资源引入路径问题
+      template: "src/index.html" // 通过加入html-loader！标签指定在使用模板时先通过html-loader编译，解决图片等外部资源引入路径问题
     }), // 输出的html文件的相关配置信息
     // 模块热替换相关插件
     new webpack.NamedModulesPlugin(),
@@ -66,6 +66,17 @@ module.exports = {
       {
         test: /\.xml$/,
         use: ["xml-loader"] // 处理xml文件
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+            options: {
+              interpolate: true // 开启ES6模板字符引用
+            }
+          }
+        ]
       }
     ]
   }
