@@ -151,9 +151,9 @@ let getNextElement = function(element) {
 
 /**
  * 获取当前元素的所有兄弟元素
- * @param {DOM} element 
+ * @param {DOM} element
  */
-let getBrotherElementAll = function (element) {
+let getBrotherElementAll = function(element) {
   var broElementList = [];
   var preEle = getPreviousElement(element);
   var nextEle = getNextElement(element);
@@ -167,8 +167,25 @@ let getBrotherElementAll = function (element) {
     } // end if
   } // end while
   return broElementList;
-}
+};
 
+/**
+ * 获取向左向上的卷曲距离
+ */
+let getScrollTopAndLeft = function () {
+  return {
+    top:
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0,
+    left:
+      window.pageXOffset ||
+      document.documentElement.scrollLeft ||
+      document.body.scrollLeft ||
+      0
+  };
+}
 
 // 导出必要函数
 export {
@@ -179,5 +196,7 @@ export {
   getLastElementChild,
   getPreviousElement,
   getNextElement,
-  getBrotherElementAll
+  getBrotherElementAll,
+  getScrollTopAndLeft
 };
+

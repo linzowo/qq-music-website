@@ -9,7 +9,8 @@ import {
   getLastElementChild,
   getPreviousElement,
   getNextElement,
-  getBrotherElementAll
+  getBrotherElementAll,
+  getScrollTopAndLeft
 } from "./js/common.js";
 // 引入ajax模块
 import ajax from "./common/ajax/ajax.js";
@@ -29,23 +30,43 @@ import "./css/gotop.css";
 import "./css/fixed-flag.css";
 // 顶部公共导航栏样式
 import "./common/header/header.css";
+import "./common/header/header.js";
 // 公共footer样式
 import "./common/footer/footer.scss";
 
 // 创建一个侧边固定按钮，并设置相关属性及样式
-let gotop = new GoTop("#side-btn", null, {
-  href: {
-    "#1": null,
-    "#2": "反馈",
-    "#3": null
-  }
-});
-let btn_gotop = gotop.LinkEleList[0];
-let btn_player = gotop.LinkEleList[2];
-// 为回到顶部按钮添加样式
-btn_gotop.classList.add("side-gotop");
-// 为网页播放器添加样式
-btn_player.classList.add("side-player");
+(function() {
+  let gotop = new GoTop("#side-btn", null, {
+    href: {
+      "#1": null,
+      "#2": "反馈",
+      "#3": null
+    }
+  });
+  let btn_gotop = gotop.LinkEleList[0];
+  let btn_player = gotop.LinkEleList[2];
+  // 为回到顶部按钮添加样式
+  btn_gotop.classList.add("side-gotop");
+  // 为网页播放器添加样式
+  btn_player.classList.add("side-player");
+  
+  let sideGoTopEle = document.querySelector(".side-gotop");
+
+  window.onscroll = function() {
+    if (
+      getScrollTopAndLeft().top > 140 &&
+      sideGoTopEle.style.display !== "none"
+    ) {
+      sideGoTopEle.style.display = "none";
+    }
+    if (
+      getScrollTopAndLeft().top < 140 &&
+      sideGoTopEle.style.display !== "block"
+    ) {
+      sideGoTopEle.style.display = "block";
+    }
+  };
+})();
 
 // mod-index相关效果
 (function() {
@@ -194,5 +215,5 @@ btn_player.classList.add("side-player");
 //   format: "json"
 // },function(res){
 //   console.log(res);
-  
+
 // });

@@ -70,3 +70,4 @@ export default class GoTop {
     this.LinkEleList = this.root.querySelectorAll("a");
   }
 }
+

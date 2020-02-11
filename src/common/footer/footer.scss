@@ -64,7 +64,6 @@
 
     & > div {
       position: absolute;
-      z-index: 1;
     }
   }
 
@@ -136,6 +135,7 @@
 
 // 产品
 .footer-product {
+  z-index: 9;
   .footer-product-list {
     width: 304px;
     display: flex;
@@ -163,6 +163,17 @@
     .icon-qm-qp {
       width: 40px;
       background-position: -563px 0;
+    }
+    &:hover {
+      .icon-qm-kg {
+        background-position: -370px -49px;
+      }
+      .icon-qm-ss {
+        background-position: -463px -49px;
+      }
+      .icon-qm-qp {
+        background-position: -563px -49px;
+      }
     }
   }
 }
