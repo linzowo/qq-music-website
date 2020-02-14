@@ -1,0 +1,279 @@
+// index 歌手页面样式
+// 顶部banner开始
+// 公共部分
+body {
+  background-color: #fafafa;
+}
+.mod-singer-push {
+  position: relative;
+  width: 100%;
+  height: 376px;
+  overflow: hidden;
+  background: url(https://y.gtimg.cn/mediastyle/yqq/img/bg_singer.jpg) 50% 0
+    repeat-x;
+
+  .section-inner {
+    max-width: 1200px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    // background-color: pink;
+  }
+}
+
+.singer-push-tit,
+.singer-push-desc,
+.singer-push-btn {
+  display: block;
+  margin: 0 auto;
+}
+
+.singer-push-desc,
+.singer-push-tit {
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(https://y.gtimg.cn/mediastyle/yqq/img/singer_tit.png?max_age=2592000&v=249247c5ab05c2a5833fdb4132d36331);
+  background-image: -webkit-image-set(url(https://y.gtimg.cn/mediastyle/yqq/img/singer_tit.png?max_age=2592000&v=249247c5ab05c2a5833fdb4132d36331) 1x,
+    url(https://y.gtimg.cn/mediastyle/yqq/img/singer_tit@2x.png?max_age=2592000&v=249247c5ab05c2a5833fdb4132d36331&v=33bde8f91f8a5da805e99175b23dc161) 2x);
+}
+// 登录前
+.js_my_singers_nologin {
+  display: none;
+}
+.singer-push-tit {
+  width: 494px;
+  height: 60px;
+  margin-top: 103px;
+}
+.singer-push-desc {
+  width: 260px;
+  height: 26px;
+  margin-top: 20px;
+  background-position: 0 -70px;
+}
+.singer-push-btn {
+  position: relative;
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  line-height: 48px;
+  width: 174px;
+  background-color: transparent;
+  border: 0 none;
+}
+.singer-push-btn-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 2px;
+  border: 1px solid #fff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  transition-property: opacity;
+  transition-duration: 0.3s;
+}
+.singer-push-btn:hover {
+  color: #fff;
+  .singer-push-btn-border {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    transition-duration: 0.3s;
+  }
+}
+// 登陆后
+.singer-push-tab {
+  text-align: center;
+  padding: 60px 0 40px;
+  line-height: 22px;
+}
+.singer-push-tab-item {
+  color: #898989;
+  margin: 0 32px;
+  font-size: 18px;
+}
+.singer-push-tab-item--on {
+  color: #fff;
+}
+.singer-push-slide {
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible;
+}
+// 左右箭头
+.slider-next,
+.slider-prev {
+  position: absolute;
+  width: 26px;
+  height: 52px;
+  top: 50%;
+  margin-top: -26px;
+  background-image: url(https://y.gtimg.cn/mediastyle/yqq/img/slider_arrow.png?max_age=2592000&v=94ea098611c8c38343b150e70833f377);
+}
+.slider-prev {
+  left: 50%;
+  margin-left: -462px;
+  background-position: 0 0;
+}
+.slider-next {
+  right: 50%;
+  margin-right: -462px;
+  background-position: -26px 0;
+}
+
+.singer-push-list {
+  display: flex;
+}
+.singer-push-list-item {
+  height: 150px;
+  width: 1.6%;
+}
+.singer-push-list-link {
+  display: block;
+  position: relative;
+  background-color: #000;
+}
+.singer-push-list-pic {
+  width: 100%;
+  height: 150px;
+  // 将图片转换为灰度
+  -webkit-filter: grayscale(1);
+  opacity: 0.8;
+  filter: alpha(opacity=70);
+}
+.singer-push-list-link:hover {
+  .singer-push-list-pic {
+    opacity: 1;
+    filter: none;
+    -webkit-filter: grayscale(0);
+    transition-property: opacity, -webkit-filter;
+    transition-duration: 0.3s;
+  }
+
+  .singer-push-list-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #31c27c;
+    z-index: 2;
+  }
+}
+.singer-push-list-more {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0 none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#7F000000', endColorstr='#7F000000');
+  background: rgba(0, 0, 0, 0.5);
+  line-height: 150px;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+// 顶部banner结束
+
+// 主体 S
+
+// TAG S
+.index-singer-box-main {
+  //   height: 500px;
+  // background-color: pink;
+}
+.mod-singer-tag {
+  background-color: #fbfbfd;
+  padding: 34px 0 17px 40px;
+  margin: 30px 0 20px;
+  .singer-tag-list {
+    display: flex;
+    margin-bottom: 3px;
+    height: auto;
+    zoom: 1;
+  }
+  .singer-tag-item {
+    display: inline-block;
+    height: 26px;
+    line-height: 27px;
+    overflow: hidden;
+    padding: 0 8px;
+    margin: 0 12px 14px 0;
+  }
+  .singer-tag-item-select {
+    background-color: #31c27c;
+    color: #fff;
+  }
+  .singer-tag-item-all {
+    margin-right: 28px;
+  }
+}
+// TAG E
+
+// sinnerlist S
+.singer-list-list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 4px;
+
+  .singer-list-item {
+    width: 20%;
+    margin-bottom: 20px;
+  }
+  .singer-list-item-box {
+    margin-right: 20px;
+    background-color: #fbfbfd;
+    min-height: 195px;
+    padding: 25px 0;
+  }
+  .singer-list-cover {
+    margin: 0 auto;
+  }
+  .singer-list-pic,
+  .singer-list-cover {
+    display: block;
+    width: 140px;
+    height: 140px;
+    border-radius: 126px;
+  }
+  .singer-list-title {
+    font-size: 16px;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    zoom: 1;
+    *width: 100%;
+    margin: 20px 30px 4px;
+  }
+}
+
+.singer-list-txt {
+  margin-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .singer-list-txt-item {
+    width: 20%;
+
+    .singer-list-txt-link {
+      display: block;
+      max-width: 90%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 14px;
+      line-height: 36px;
+    }
+  }
+}
+
+// sinnerlist E
+
+// 主体 E

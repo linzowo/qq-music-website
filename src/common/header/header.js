@@ -28,4 +28,10 @@ export default (function() {
   let modSearchOtherEle = document.querySelector("#mod_search_other");
   topSearchEle.addEventListener("focus", addDrop(modSearchOtherEle));
   topSearchEle.addEventListener("blur", removeDrop(modSearchOtherEle));
+  // 解决在最小屏幕尺寸下的搜索框交互效果
+  topSearchEle.addEventListener("transitionend", function() {
+    if (topSearchEle.offsetWidth === 0) {
+      topSearchEle.blur();
+    }
+  });
 })();

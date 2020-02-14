@@ -1,17 +1,7 @@
 // 入口文件
 
 // 引入公共方法
-import {
-  animate,
-  getStyle,
-  getType,
-  getFirstElementChild,
-  getLastElementChild,
-  getPreviousElement,
-  getNextElement,
-  getBrotherElementAll,
-  getScrollTopAndLeft
-} from "./js/common.js";
+import "./js/common.js";
 // 引入ajax模块
 import ajax from "./common/ajax/ajax.js";
 // 引入侧边固定按钮组件
@@ -34,11 +24,18 @@ import "./common/header/header.js";
 // 公共footer样式
 import "./common/footer/footer.scss";
 
+// index-singer页面样式
+import "./css/index-singer-box.scss";
+
+// 分页相关样式
+import "./common/page/page.scss";
+// import "./common/page/page.js";
+
 // 创建一个侧边固定按钮，并设置相关属性及样式
 (function() {
   let gotop = new GoTop("#side-btn", null, {
     href: {
-      "#1": null,
+      "javascript:;": null,
       "#2": "反馈",
       "#3": null
     }
@@ -49,21 +46,24 @@ import "./common/footer/footer.scss";
   btn_gotop.classList.add("side-gotop");
   // 为网页播放器添加样式
   btn_player.classList.add("side-player");
-  
+
   let sideGoTopEle = document.querySelector(".side-gotop");
+  sideGoTopEle.addEventListener("click",function(){
+    scrollTo(0,0);
+  })
 
   window.onscroll = function() {
     if (
-      getScrollTopAndLeft().top > 140 &&
-      sideGoTopEle.style.display !== "none"
-    ) {
-      sideGoTopEle.style.display = "none";
-    }
-    if (
-      getScrollTopAndLeft().top < 140 &&
+      $.getScrollTopAndLeft().top > 140 &&
       sideGoTopEle.style.display !== "block"
     ) {
       sideGoTopEle.style.display = "block";
+    }
+    if (
+      $.getScrollTopAndLeft().top < 140 &&
+      sideGoTopEle.style.display !== "none"
+    ) {
+      sideGoTopEle.style.display = "none";
     }
   };
 })();
@@ -92,14 +92,14 @@ import "./common/footer/footer.scss";
     // 判断当前数据是文本还是数字
     if (isNaN(parseInt(this.dataset.p))) {
       // 不是数字
-      let next_slide_switch_item = getNextElement(slide_switch_item_current);
-      let prev_slide_switch_item = getPreviousElement(
+      let next_slide_switch_item = $.getNextElement(slide_switch_item_current);
+      let prev_slide_switch_item = $.getPreviousElement(
         slide_switch_item_current
       );
-      let first_slide_switch_item = getFirstElementChild(
+      let first_slide_switch_item = $.getFirstElementChild(
         slide_switch_item_current.parentElement
       );
-      let last_slide_switch_item = getLastElementChild(
+      let last_slide_switch_item = $.getLastElementChild(
         slide_switch_item_current.parentElement
       );
 
@@ -118,10 +118,10 @@ import "./common/footer/footer.scss";
                 parentWidth +
               "px";
           }
-          animate(
+          $.animate(
             targetEle,
             {
-              left: parseInt(getStyle(targetEle, "left")) + parentWidth
+              left: parseInt($.getStyle(targetEle, "left")) + parentWidth
             },
             function() {
               targetEle.style.left =
@@ -137,10 +137,10 @@ import "./common/footer/footer.scss";
               );
 
           // if (next_slide_switch_item == last_slide_switch_item) {
-          animate(
+          $.animate(
             targetEle,
             {
-              left: parseInt(getStyle(targetEle, "left")) - parentWidth
+              left: parseInt($.getStyle(targetEle, "left")) - parentWidth
             },
             function() {
               if (!next_slide_switch_item) {
@@ -160,7 +160,7 @@ import "./common/footer/footer.scss";
       // 是数字
 
       this.classList.add("slide-switch-item-current");
-      animate(targetEle, {
+      $.animate(targetEle, {
         left: parseInt(this.dataset.p) * -parentWidth
       });
     }
@@ -204,6 +204,11 @@ import "./common/footer/footer.scss";
     });
   });
 })();
+
+// 创建分页按钮
+(function(){
+  $.page(document.querySelector(".js_pager"),229);
+})()
 
 // mod-index相关效果
 

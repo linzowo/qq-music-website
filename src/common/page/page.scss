@@ -1,0 +1,25 @@
+// 分页按钮样式
+.mod-page-nav {
+  text-align: center;
+  margin-bottom: 60px;
+  a {
+    color: #a2a2a2;
+  }
+  a,
+  strong {
+    font-size: 16px;
+    font-weight: 400;
+    display: inline-block;
+    line-height: 50px;
+    margin: 0 5px;
+    padding: 0 21px;
+    box-sizing: border-box;
+    min-width: 24px;
+  }
+
+  .current,
+  a:hover {
+    color: #fff;
+    background-color: #31c27c;
+  }
+}
