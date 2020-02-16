@@ -6,7 +6,7 @@
  * @param {Object} params 请求参数
  * @param {Function} callback 请求完成后要执行的操作
  */
-let ajax = function(method, url, params, callback) {
+let ajax = function(method, url, params={}, callback) {
   // 将method转换为大写，并验证用户输入
   method = method.toUpperCase();
   if (method !== "GET" && method !== "POST") return false;
@@ -42,7 +42,6 @@ let ajax = function(method, url, params, callback) {
   if (method === "GET") {
     url += "?" + querystring;
   }
-
   xhr.open(method, url);
   let data = null;
   if (method === "POST") {

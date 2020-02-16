@@ -2,6 +2,8 @@
 
 // 引入公共方法
 import "./js/common.js";
+// 引入公共配置文件
+import { API } from "./js/config.js";
 // 引入ajax模块
 import ajax from "./common/ajax/ajax.js";
 // 引入侧边固定按钮组件
@@ -48,9 +50,9 @@ import "./common/page/page.scss";
   btn_player.classList.add("side-player");
 
   let sideGoTopEle = document.querySelector(".side-gotop");
-  sideGoTopEle.addEventListener("click",function(){
-    scrollTo(0,0);
-  })
+  sideGoTopEle.addEventListener("click", function() {
+    scrollTo(0, 0);
+  });
 
   window.onscroll = function() {
     if (
@@ -206,19 +208,14 @@ import "./common/page/page.scss";
 })();
 
 // 创建分页按钮
-(function(){
-  $.page(document.querySelector(".js_pager"),229);
-})()
-
+(function() {
+  $.page(".js_pager", 229);
+})();
 // mod-index相关效果
 
-// 测试ajax
-// ajax("get", "https://c.y.qq.com/soso/fcgi-bin/client_search_cp", {
-//   p: 1,
-//   n: 2,
-//   w: "泡沫",
-//   format: "json"
-// },function(res){
-//   console.log(res);
-
-// });
+// 通过ajax及nginx跳板实现跨域请求数据
+(function() {
+  ajax("get", API.index.url, API.index.params, function(res) {
+    console.log(res);
+  });
+})();

@@ -9,7 +9,15 @@ module.exports = {
   devtool: "inline-source-map", // 编译后如果出错会指向出错文件而不是编译后文件
   devServer: {
     contentBase: "./dist", // 将该文件夹作为网站根目录启动服务器
-    hot: true // 开启模块热替换
+    hot: true, // 开启模块热替换
+    host: 'localhost',
+    port: 8000,
+    proxy: {  // 代理配置
+      '/v1':{
+        target: "http://localhost:8001", // 代理服务器地址，nginx会监听此接口下的请求，并代理请求真正的网址
+        // pathRewrite: {'^/v1' : ''}
+      }
+    }
   },
   plugins: [
     new CleanWebpackPlugin(), // 每次编译后会先清空输出文件夹

@@ -328,6 +328,64 @@ class Linzowo {
       rootEle.innerHTML = pageBtnDS;
     }
   }
+
+  proxy(url, params, callback) {
+    // 使用window.name+iframe方案实现跨域请求数据
+    if (!url) return false;
+    // 确保传入数据为Object对象
+    if (Object.prototype.toString.call(params) !== "[object Object]") {
+      // 如果不是就进行json格式转换
+      if (!JSON.parse(params)) return false;
+      params = JSON.parse(params);
+    }
+
+    // 处理参数
+    let pairs = [];
+    for (let key in params) {
+      pairs.push(key + "=" + params[key]);
+    }
+    url = url + "?" + pairs.join("&");
+
+    // 生成跨域元素
+    let iframe = document.createElement("iframe");
+    iframe.src = url;
+    iframe.style.display = "none";
+
+    // 开始跨域请求
+    // 标记是第几次onload
+    let state = 0;
+    iframe.onload = function(){
+      if(state === 1){
+        // 现在是第二次onload，已经读取成功了，并将域切换为同域
+        // 获取返回的信息
+        callback(iframe.contentWindow.name);
+        // 删除iframe
+        removeFrame();
+      }
+
+      if(state === 0){
+        // 第一次onload请求的是跨域站点，成功后将域切换为同域
+        // iframe.contentWindow.name = iframe.contentWindow.document.body.innerText;
+        console.log(iframe.contentWindow.document.body.innerText);
+        
+        iframe.contentWindow.location = window.location;
+        console.log(window.location);
+        
+        // 标记状态为完成第一次请求
+        state = 1;
+      }
+    }
+
+    // 将元素插入body中
+    document.body.appendChild(iframe);
+
+    // 删除iframe的方法
+    function removeFrame(){
+      iframe.contentWindow.document.write = "";
+      iframe.contentWindow.close();
+      document.body.removeChild(iframe);
+    }
+  }
 }
 export default (function() {
   window.$ = window.Linzowo = new Linzowo();
