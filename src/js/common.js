@@ -80,7 +80,7 @@ class Linzowo {
           // 目标值 将其转换为数字，确保用户传入的内容能够被识别
           target = parseFloat(json[attr]);
           // 获取当前位置信息
-          current = parseFloat(getStyle(element, attr));
+          current = parseFloat(this.getStyle(element, attr));
           // 计算步数 同时确定移动的方向（正负）
           step = (target - current) / 10;
           // 因为浮点数存在计算精度的问题，所以先取整再计算，根据正负取整

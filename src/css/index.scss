@@ -132,6 +132,7 @@ nav {
   white-space: nowrap;
   text-overflow: ellipsis;
   color: #999;
+  overflow: hidden;
 }
 .c-tx-thin {
   color: #999;
@@ -345,6 +346,9 @@ nav {
 
 // mv
 .mod-index-mv {
+  .mod-index-tit{
+    background-position: 0 -250px;
+  }
   .mv-list{
     display: flex;
     flex-direction: row;
