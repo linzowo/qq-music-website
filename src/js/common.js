@@ -31,9 +31,14 @@ class Linzowo {
    * @return {String} 返回值始终是一个数字加单位不会出现百分比
    */
   getStyle(element, attr) {
-    return window.getComputedStyle
+    let res = window.getComputedStyle
       ? window.getComputedStyle(element, null)[attr]
       : element.currentStyle[attr];
+
+      // 在ie下 当属性值为空时，上面的方法可能返回auto，将auto转换为0返回
+    res = res == "auto" ? 0 : res;
+
+    return res;
   }
 
   /**
@@ -354,8 +359,8 @@ class Linzowo {
     // 开始跨域请求
     // 标记是第几次onload
     let state = 0;
-    iframe.onload = function(){
-      if(state === 1){
+    iframe.onload = function() {
+      if (state === 1) {
         // 现在是第二次onload，已经读取成功了，并将域切换为同域
         // 获取返回的信息
         callback(iframe.contentWindow.name);
@@ -363,24 +368,24 @@ class Linzowo {
         removeFrame();
       }
 
-      if(state === 0){
+      if (state === 0) {
         // 第一次onload请求的是跨域站点，成功后将域切换为同域
         // iframe.contentWindow.name = iframe.contentWindow.document.body.innerText;
         console.log(iframe.contentWindow.document.body.innerText);
-        
+
         iframe.contentWindow.location = window.location;
         console.log(window.location);
-        
+
         // 标记状态为完成第一次请求
         state = 1;
       }
-    }
+    };
 
     // 将元素插入body中
     document.body.appendChild(iframe);
 
     // 删除iframe的方法
-    function removeFrame(){
+    function removeFrame() {
       iframe.contentWindow.document.write = "";
       iframe.contentWindow.close();
       document.body.removeChild(iframe);
