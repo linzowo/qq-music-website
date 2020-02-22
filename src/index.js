@@ -5,6 +5,9 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
+// ie 9 classlist兼容
+import classList from "classlist";
+
 // 引入公共方法
 import "./js/common.js";
 // 引入公共配置文件
@@ -50,9 +53,9 @@ import "./common/page/page.scss";
   let btn_gotop = gotop.LinkEleList[0];
   let btn_player = gotop.LinkEleList[2];
   // 为回到顶部按钮添加样式
-  btn_gotop.classList.add("side-gotop");
+  classList(btn_gotop).add("side-gotop");
   // 为网页播放器添加样式
-  btn_player.classList.add("side-player");
+  classList(btn_player).add("side-player");
 
   let sideGoTopEle = document.querySelector(".side-gotop");
   sideGoTopEle.addEventListener("click", function() {
@@ -94,7 +97,7 @@ import "./common/page/page.scss";
       ".slide-switch-item-current"
     );
     // 移除当前标记
-    slide_switch_item_current.classList.remove("slide-switch-item-current");
+    classList(slide_switch_item_current).remove("slide-switch-item-current");
 
     // 判断当前数据是文本还是数字
     if (isNaN(parseInt(this.dataset.p))) {
@@ -114,8 +117,8 @@ import "./common/page/page.scss";
         case "prev":
           // 切换轮播标记
           prev_slide_switch_item
-            ? prev_slide_switch_item.classList.add("slide-switch-item-current")
-            : last_slide_switch_item.classList.add("slide-switch-item-current");
+            ? classList(prev_slide_switch_item).add("slide-switch-item-current")
+            : classList(last_slide_switch_item).add("slide-switch-item-current");
 
           // 执行动画
           if (!prev_slide_switch_item) {
@@ -138,8 +141,8 @@ import "./common/page/page.scss";
           break;
         case "next":
           next_slide_switch_item
-            ? next_slide_switch_item.classList.add("slide-switch-item-current")
-            : first_slide_switch_item.classList.add(
+            ? classList(next_slide_switch_item).add("slide-switch-item-current")
+            : classList(first_slide_switch_item).add(
                 "slide-switch-item-current"
               );
 
@@ -166,7 +169,7 @@ import "./common/page/page.scss";
     } else {
       // 是数字
 
-      this.classList.add("slide-switch-item-current");
+      classList(this).add("slide-switch-item-current");
       $.animate(targetEle, {
         left: parseInt(this.dataset.p) * -parentWidth
       });
@@ -180,13 +183,13 @@ import "./common/page/page.scss";
   for (const ele of mod_index_list) {
     ele.addEventListener("click", function(evt) {
       // 轮播相关动画关联效果实现
-      if (evt.target.classList.contains("js-jump")) {
+      if (classList(evt.target).contains("js-jump")) {
         jumpBtnClickHandle.call(evt.target);
       }
 
       if (
-        evt.target.classList.contains("slide-action-arrow") ||
-        evt.target.classList.contains("slide-switch-bg")
+        classList(evt.target).contains("slide-action-arrow") ||
+        classList(evt.target).contains("slide-switch-bg")
       ) {
         jumpBtnClickHandle.call(evt.target.parentElement);
       }
@@ -194,7 +197,7 @@ import "./common/page/page.scss";
 
       // tab nav切换相关
       // 判断点击的目标是否为tab标签
-      if (evt.target.classList.contains("mod-index-tab-link")) {
+      if (classList(evt.target).contains("mod-index-tab-link")) {
         // console.dir(evt.target);
         // 获取元素上绑定的数据信息
         // 生成ajax请求
@@ -203,8 +206,8 @@ import "./common/page/page.scss";
         let current_tab = evt.target.parentElement.parentElement.querySelector(
           ".mod-index-tab-link.current"
         );
-        current_tab.classList.remove("current");
-        evt.target.classList.add("current");
+        classList(current_tab).remove("current");
+        classList(evt.target).add("current");
       }
 
       // tab nav切换相关

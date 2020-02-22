@@ -1,4 +1,5 @@
 // 侧边回到顶部组件
+import classList from "classlist";
 
 /**
  * 返回一个a标签字符串
@@ -24,7 +25,7 @@ export default class GoTop {
     // 根节点
     this.root = root.nodeType === 1 ? root : document.querySelector(root);
     // 为根节点添加样式名称
-    this.root.classList.add("gotop-container");
+    classList(this.root).add("gotop-container");
     // css文件路径
     this.cssPath = cssPath ? cssPath : null;
 
