@@ -1,7 +1,9 @@
 // 入口文件
 
 // 引入兼容ie8文件
-import 'babel-polyfill';
+// import '@babel/polyfill';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 // 引入公共方法
 import "./js/common.js";

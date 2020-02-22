@@ -2,9 +2,25 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
   mode: "development",
+
+  optimization: {
+    // 兼容ie8相关设置
+    minimizer: [
+      new UglifyJsPlugin({
+        // 此插件的作用是用于压缩js文件同时可以一些对ie8的兼容支持
+        sourceMap: true,
+        exclude: /node_modules/,
+        uglifyOptions: {
+          ie8: true // 解决ie下的关键字default的问题
+        }
+      })
+    ]
+  },
+
   entry: "./src/index.js",
   devtool: "inline-source-map", // 编译后如果出错会指向出错文件而不是编译后文件
   devServer: {
@@ -12,7 +28,7 @@ module.exports = {
     hot: true, // 开启模块热替换
     host: "localhost",
     port: 8000,
-    disableHostCheck: true,  // 关闭默认hostname检测，避免在ie中出现invalid host header的错误
+    disableHostCheck: true, // 关闭默认hostname检测，避免在ie中出现invalid host header的错误
     proxy: {
       // 代理配置
       "/v1": {
@@ -87,6 +103,25 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        // 兼容ie8相关设置
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+            plugins: [
+              ["@babel/plugin-transform-runtime"],
+              [
+                // 笔者为了兼容IE8才用了这个插件，代价是不能tree shaking
+                // 没有IE8兼容需求的同学可以把这个插件去掉
+                "@babel/plugin-transform-modules-commonjs"
+              ]
+            ]
+          }
+        }
       }
     ]
   }
