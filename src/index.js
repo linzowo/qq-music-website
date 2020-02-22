@@ -1,5 +1,8 @@
 // 入口文件
 
+// 引入兼容ie8文件
+import 'babel-polyfill';
+
 // 引入公共方法
 import "./js/common.js";
 // 引入公共配置文件
@@ -172,7 +175,7 @@ import "./common/page/page.scss";
     // 执行指定操作
   }
   // 为跳转按钮注册点击事件
-  mod_index_list.forEach(ele => {
+  for (const ele of mod_index_list) {
     ele.addEventListener("click", function(evt) {
       // 轮播相关动画关联效果实现
       if (evt.target.classList.contains("js-jump")) {
@@ -204,7 +207,7 @@ import "./common/page/page.scss";
 
       // tab nav切换相关
     });
-  });
+  }
 })();
 
 // 创建分页按钮
@@ -527,8 +530,8 @@ import "./common/page/page.scss";
     (function(res) {
       let dataArr = res.focus.data.content;
       // 生成<ul class="slide-list event-list js-list">下html结构
-      let eventListItem = createHTML(dataArr.length + 1, i => {
-        i >= dataArr.length - 1 ? (i -= dataArr.length - 1) : (i = i);
+      let eventListItem = createHTML(dataArr.length + 2, i => {
+        i = i >= dataArr.length ? i - dataArr.length : i;
         return `
           <li class="event-list-item slide-item">
             <a
@@ -622,7 +625,9 @@ import "./common/page/page.scss";
           singerLinkHtml = "";
 
         // 生成歌手相关html
-        newAlbumData[i].singers.forEach((ele, j) => {
+        for (let j in newAlbumData[i].singers) {
+          let ele = newAlbumData[i].singers[j];
+
           singerName += j == 0 ? ele.name : " / " + ele.name;
           singerLinkHtml +=
             j == 0
@@ -640,7 +645,7 @@ import "./common/page/page.scss";
           data-stat="y_new.index.album.singername"
           >${ele.name}</a
         >`;
-        });
+        }
 
         return `
           <li class="album-list-item slide-item">

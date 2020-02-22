@@ -10,11 +10,13 @@ module.exports = {
   devServer: {
     contentBase: "./dist", // 将该文件夹作为网站根目录启动服务器
     hot: true, // 开启模块热替换
-    host: 'localhost',
+    host: "localhost",
     port: 8000,
-    proxy: {  // 代理配置
-      '/v1':{
-        target: "http://localhost:8001", // 代理服务器地址，nginx会监听此接口下的请求，并代理请求真正的网址
+    disableHostCheck: true,  // 关闭默认hostname检测，避免在ie中出现invalid host header的错误
+    proxy: {
+      // 代理配置
+      "/v1": {
+        target: "http://localhost:8001" // 代理服务器地址，nginx会监听此接口下的请求，并代理请求真正的网址
         // pathRewrite: {'^/v1' : ''}
       }
     }
