@@ -22,6 +22,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.6.4",
     "css-loader": "^3.2.0",
+    "cssnano": "^4.1.10",
     "csv-loader": "^3.0.2",
     "extract-loader": "^3.1.0",
     "fibers": "^4.0.2",
@@ -30,6 +31,9 @@
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.13.0",
     "papaparse": "^4.5.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-scss": "^2.0.0",
+    "precss": "^4.0.0",
     "regenerator-runtime": "^0.13.3",
     "sass": "^1.23.3",
     "sass-loader": "^8.0.0",
@@ -45,5 +49,11 @@
     "@babel/polyfill": "^7.8.3",
     "classlist": "^2.0.0",
     "lodash": "^4.17.15"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "> 1%",
+    "last 2 versions",
+    "ie <= 11"
+  ]
 }

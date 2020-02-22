@@ -62,7 +62,13 @@ module.exports = {
             loader: "style-loader" // 将 JS 字符串生成为 style 节点
           },
           {
-            loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
+            loader: "css-loader", // 将 CSS 转化成 CommonJS 模块
+            options: {
+              importLoaders: 2, // 表明在这个处理器后还有2个loader
+            }
+          },
+          {
+            loader: "postcss-loader" // 处理css文件在各浏览器中得兼容问题
           },
           {
             loader: "sass-loader" // 将 Sass 编译成 CSS
