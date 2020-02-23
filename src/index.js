@@ -87,7 +87,7 @@ import "./common/page/page.scss";
   function jumpBtnClickHandle() {
     // 判断当前点击的按钮是哪个区域的按钮
     // 获取要操作的目标区域
-    let stat_arr = this.dataset.stat.split(".");
+    let stat_arr = this.getAttribute("data-stat").split(".");
     let targetEle = document.querySelector("." + stat_arr[2] + "-list");
     // 父元素宽度--一次动画的移动距离
     let parentWidth = targetEle.parentElement.offsetWidth;
@@ -100,7 +100,7 @@ import "./common/page/page.scss";
     classList(slide_switch_item_current).remove("slide-switch-item-current");
 
     // 判断当前数据是文本还是数字
-    if (isNaN(parseInt(this.dataset.p))) {
+    if (isNaN(parseInt(this.getAttribute("data-p")))) {
       // 不是数字
       let next_slide_switch_item = $.getNextElement(slide_switch_item_current);
       let prev_slide_switch_item = $.getPreviousElement(
@@ -113,7 +113,7 @@ import "./common/page/page.scss";
         slide_switch_item_current.parentElement
       );
 
-      switch (this.dataset.p) {
+      switch (this.getAttribute("data-p")) {
         case "prev":
           // 切换轮播标记
           prev_slide_switch_item
@@ -171,7 +171,7 @@ import "./common/page/page.scss";
 
       classList(this).add("slide-switch-item-current");
       $.animate(targetEle, {
-        left: parseInt(this.dataset.p) * -parentWidth
+        left: parseInt(this.getAttribute("data-p")) * -parentWidth
       });
     }
 
