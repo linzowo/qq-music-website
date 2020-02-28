@@ -1,9 +1,9 @@
 // 入口文件
 
 // 引入兼容ie8文件
-// import '@babel/polyfill';
-import "core-js/stable";
-import "regenerator-runtime/runtime";
+import '@babel/polyfill';
+// import "core-js/stable";
+// import "regenerator-runtime/runtime";
 
 // ie 9 classlist兼容
 import classList from "classlist";
@@ -13,7 +13,7 @@ import "./js/common.js";
 // 引入公共配置文件
 import { API } from "./js/config.js";
 // 引入ajax模块
-import ajax from "./common/ajax/ajax.js";
+import ajax from "./library/ajax/ajax.js";
 // 引入侧边固定按钮组件
 import GoTop from "./js/util/gotop.js";
 
@@ -38,7 +38,7 @@ import "./common/footer/footer.scss";
 import "./css/index-singer-box.scss";
 
 // 分页相关样式
-import "./common/page/page.scss";
+import "./css/page.scss";
 // import "./common/page/page.js";
 
 // 创建一个侧边固定按钮，并设置相关属性及样式

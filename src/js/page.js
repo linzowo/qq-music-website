@@ -8,7 +8,7 @@
 // if (!window.$) {
 //   import "../../js/common.js";
 // }
-import "../../js/common.js";
+import "./common.js";
 
 export default (function(total, callback) {
   let current = 1; // 当前显示的第几页

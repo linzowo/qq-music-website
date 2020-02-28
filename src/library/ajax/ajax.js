@@ -28,6 +28,11 @@ let ajax = function(method, url, params={}, callback) {
     // 如果不是请求完成状态 不响应
     if (this.readyState !== 4) return;
 
+    // 如果请求失败就直接返回
+    if(!this.responseText){
+      console.log("请求失败，或该站点未返回有效信息。");
+      return null;
+    }
     // 尝试解析json格式数据
     try {
       callback(JSON.parse(this.responseText));
