@@ -1,4 +1,48 @@
-// 公共方法
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>js/common.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="GoTop.html">GoTop</a><ul class='methods'><li data-type='method'><a href="GoTop.html#setCssLink">setCssLink</a></li><li data-type='method'><a href="GoTop.html#setHtml">setHtml</a></li></ul></li><li><a href="Linzowo.html">Linzowo</a><ul class='methods'><li data-type='method'><a href="Linzowo.html#animate">animate</a></li><li data-type='method'><a href="Linzowo.html#getBrotherElementAll">getBrotherElementAll</a></li><li data-type='method'><a href="Linzowo.html#getFirstElementChild">getFirstElementChild</a></li><li data-type='method'><a href="Linzowo.html#getLastElementChild">getLastElementChild</a></li><li data-type='method'><a href="Linzowo.html#getNextElement">getNextElement</a></li><li data-type='method'><a href="Linzowo.html#getPreviousElement">getPreviousElement</a></li><li data-type='method'><a href="Linzowo.html#getScrollTopAndLeft">getScrollTopAndLeft</a></li><li data-type='method'><a href="Linzowo.html#getStyle">getStyle</a></li><li data-type='method'><a href="Linzowo.html#getType">getType</a></li><li data-type='method'><a href="Linzowo.html#isElement">isElement</a></li><li data-type='method'><a href="Linzowo.html#page">page</a></li></ul></li><li><a href="module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ajax">ajax</a></li><li><a href="global.html#getLink">getLink</a></li><li><a href="global.html#setCssLink">setCssLink</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">js/common.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// 公共方法
 /** Class representing a point. */
 class Linzowo {
   constructor() {}
@@ -16,9 +60,9 @@ class Linzowo {
       //an exception is thrown and we end up here. Testing some
       //properties that all elements have (works on IE7)
       return (
-        typeof obj === "object" &&
-        obj.nodeType === 1 &&
-        typeof obj.style === "object" &&
+        typeof obj === "object" &amp;&amp;
+        obj.nodeType === 1 &amp;&amp;
+        typeof obj.style === "object" &amp;&amp;
         typeof obj.ownerDocument === "object"
       );
     }
@@ -76,8 +120,8 @@ class Linzowo {
           target = parseFloat(json[attr]) * 100;
           current = parseFloat(getStyle(element, attr)) * 100;
           step = (target - current) / 10;
-          step = step < 0 ? Math.floor(step) : Math.ceil(step);
-          current = Math.abs(step) < 0.3 ? target : current + step;
+          step = step &lt; 0 ? Math.floor(step) : Math.ceil(step);
+          current = Math.abs(step) &lt; 0.3 ? target : current + step;
           element.style[attr] = current / 100;
         } else if (attr === "zIndex") {
           element.style[attr] = parseInt(json[attr]) ? parseInt(json[attr]) : 0;
@@ -89,9 +133,9 @@ class Linzowo {
           // 计算步数 同时确定移动的方向（正负）
           step = (target - current) / 10;
           // 因为浮点数存在计算精度的问题，所以先取整再计算，根据正负取整
-          step = step < 0 ? Math.floor(step) : Math.ceil(step);
+          step = step &lt; 0 ? Math.floor(step) : Math.ceil(step);
           // 获取移动后的位置
-          current = Math.abs(step) < 0.1 ? target : current + step;
+          current = Math.abs(step) &lt; 0.1 ? target : current + step;
           // 将值应用到元素上
           element.style[attr] = current + "px";
         }
@@ -122,7 +166,7 @@ class Linzowo {
     } else {
       // 如果其他浏览器使用firstChild获取到的不是元素，仍然是节点的情况下，我们就需要判断其获取到的是标签还是其他类型的节点
       var node = element.firstChild; // 将获取到的第一个内容存储起来
-      while (node && node.nodeType != 1) {
+      while (node &amp;&amp; node.nodeType != 1) {
         // 如果获取到的内容不是标签就检查下一个内容
         node = node.nextSibling;
       } // end while
@@ -139,7 +183,7 @@ class Linzowo {
       return element.lastElementChild;
     } else {
       var node = element.lastChild;
-      while (node && node.nodeType != 1) {
+      while (node &amp;&amp; node.nodeType != 1) {
         node = node.previousSibling;
       } // end while
       return node;
@@ -155,7 +199,7 @@ class Linzowo {
       return element.previousElementSibling;
     } else {
       var node = element.previousSibling;
-      while (node && node.nodeType != 1) {
+      while (node &amp;&amp; node.nodeType != 1) {
         node = node.previousSibling;
       } // end while
       return node;
@@ -171,7 +215,7 @@ class Linzowo {
       return element.nextElementSibling;
     } else {
       var node = element.nextSibling;
-      while (node && node.nodeType != 1) {
+      while (node &amp;&amp; node.nodeType != 1) {
         node = node.nextSibling;
       } // end while
       return node;
@@ -268,62 +312,62 @@ class Linzowo {
       // 几个关键页码 min min+2 min+4 max max-2 max-4
 
       // 循环生成HTML结构
-      for (let i = 0; i <= halfSize; i++) {
+      for (let i = 0; i &lt;= halfSize; i++) {
         if (i === 0) {
-          pageBtnDS = `<strong class="current">${current}</strong>`;
+          pageBtnDS = `&lt;strong class="current">${current}&lt;/strong>`;
           continue;
         }
         let prevNnm = current - i,
           nextNum = current + i;
         if (prevNnm >= min) {
           pageBtnDS =
-            `<a href="javascript:;" class="js_pageindex" data-index="${prevNnm}">${prevNnm}</a>` +
+            `&lt;a href="javascript:;" class="js_pageindex" data-index="${prevNnm}">${prevNnm}&lt;/a>` +
             pageBtnDS;
         }
-        if (nextNum <= max) {
-          pageBtnDS += `<a href="javascript:;" class="js_pageindex" data-index="${nextNum}">${nextNum}</a>`;
+        if (nextNum &lt;= max) {
+          pageBtnDS += `&lt;a href="javascript:;" class="js_pageindex" data-index="${nextNum}">${nextNum}&lt;/a>`;
         }
 
         if (i === halfSize) {
           if (prevNnm > min + 1) {
             pageBtnDS =
-              `<a href="javascript:;" class="js_pageindex" data-index="1">1</a>
-            <strong class="more">...</strong>` + pageBtnDS;
+              `&lt;a href="javascript:;" class="js_pageindex" data-index="1">1&lt;/a>
+            &lt;strong class="more">...&lt;/strong>` + pageBtnDS;
           }
           if (prevNnm == min + 1) {
             pageBtnDS =
-              `<a href="javascript:;" class="js_pageindex" data-index="1">1</a>` +
+              `&lt;a href="javascript:;" class="js_pageindex" data-index="1">1&lt;/a>` +
               pageBtnDS;
           }
 
-          if (nextNum < max - 1) {
-            pageBtnDS += `<strong class="more">...</strong
-            ><a href="javascript:;" class="js_pageindex" data-index="${max}" hidefocus=""
-              >${max}</a
+          if (nextNum &lt; max - 1) {
+            pageBtnDS += `&lt;strong class="more">...&lt;/strong
+            >&lt;a href="javascript:;" class="js_pageindex" data-index="${max}" hidefocus=""
+              >${max}&lt;/a
             >`;
           }
           if (nextNum == max - 1) {
-            pageBtnDS += `<a href="javascript:;" class="js_pageindex" data-index="${max}" hidefocus=""
-            >${max}</a
+            pageBtnDS += `&lt;a href="javascript:;" class="js_pageindex" data-index="${max}" hidefocus=""
+            >${max}&lt;/a
           >`;
           }
 
           if (current > min) {
             pageBtnDS =
               `
-            <a href="javascript:;" class="prev js_pageindex" data-index="${current -
+            &lt;a href="javascript:;" class="prev js_pageindex" data-index="${current -
               1}" title="上一页"
-              ><span>&lt;</span></a
+              >&lt;span>&amp;lt;&lt;/span>&lt;/a
             >` + pageBtnDS;
           }
-          if (current < max) {
-            pageBtnDS += `<a
+          if (current &lt; max) {
+            pageBtnDS += `&lt;a
             href="javascript:;"
             class="next js_pageindex"
             data-index="${current + 1}"
             title="下一页"
             hidefocus=""
-            ><span>&gt;</span></a
+            >&lt;span>&amp;gt;&lt;/span>&lt;/a
           >`;
           }
         }
@@ -349,7 +393,7 @@ class Linzowo {
     for (let key in params) {
       pairs.push(key + "=" + params[key]);
     }
-    url = url + "?" + pairs.join("&");
+    url = url + "?" + pairs.join("&amp;");
 
     // 生成跨域元素
     let iframe = document.createElement("iframe");
@@ -395,3 +439,28 @@ class Linzowo {
 export default (function() {
   window.$ = window.Linzowo = new Linzowo();
 })();
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Feb 29 2020 15:40:42 GMT+0800 (GMT+08:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
